@@ -1,5 +1,5 @@
 
-define(['require'], function () {
+define(['API'], function (API) {
 
   widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
