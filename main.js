@@ -1,5 +1,5 @@
 
-require(["DSx/Helpers/API"], function (API) {
+define(['require'], function (API) {
 
   widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
