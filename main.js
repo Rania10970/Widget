@@ -1,4 +1,4 @@
-
+require( null,
   widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
       <h3>Controller :</h3><input id="controller" /></br>
@@ -10,4 +10,4 @@
       <h3>Result : </h3><textarea id="result" rows="50" cols="130"></textarea></br>
     </div>
   `;
-
+) ; 
