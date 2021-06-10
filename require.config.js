@@ -1,7 +1,7 @@
 define([], function () {
     'use strict';
 
-    var SRC = 'https://widgetfactorydev.extranet.3ds.com/resources/javascript/00test/GPT3/WFAPI';
+    var SRC = 'https://raw.githubusercontent.com/Rania10970/Widget/main';
     var LIBS = 'https://widgetrepository-thirdparty-cdn.3ds.com';
     var RES = 'https://widgetfactorydev.extranet.3ds.com/resources';
 
