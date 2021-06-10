@@ -1,5 +1,5 @@
 
-require(['https://code.jquery.com/jquery-2.2.4.min.js'] function (API) {
+require(['https://code.jquery.com/jquery-2.2.4.min.js'] function () {
 
   widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
