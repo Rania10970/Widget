@@ -3,7 +3,7 @@ define([], function () {
 
     var SRC = 'https://raw.githubusercontent.com/Rania10970/Widget/main';
     var LIBS = 'https://github.com/Rania10970?tab=repositories';
-    var RES = 'https://widgetfactorydev.extranet.3ds.com/resources';
+    var RES = 'https://github.com/Rania10970/Widget';
 
     require.config({
         paths: {
