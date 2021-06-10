@@ -1,4 +1,4 @@
-require( null,
+require( [] ,
   widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
       <h3>Controller :</h3><input id="controller" /></br>
