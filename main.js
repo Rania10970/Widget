@@ -1,5 +1,7 @@
-require( [] ,
-  widget.body.innerHTML = `
+
+define([], function(){
+ 	//TODO: Implements the AMD module
+ widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
       <h3>Controller :</h3><input id="controller" /></br>
       <h3>Method :</h3><input id="method" /></br>
@@ -10,4 +12,4 @@ require( [] ,
       <h3>Result : </h3><textarea id="result" rows="50" cols="130"></textarea></br>
     </div>
   `;
-) ; 
+ 	});
