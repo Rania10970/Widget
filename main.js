@@ -1,7 +1,7 @@
 
-define([], function(){
- 	//TODO: Implements the AMD module
- widget.body.innerHTML = `
+require(["DSx/Helpers/API"], function (API) {
+
+  widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
       <h3>Controller :</h3><input id="controller" /></br>
       <h3>Method :</h3><input id="method" /></br>
@@ -12,4 +12,16 @@ define([], function(){
       <h3>Result : </h3><textarea id="result" rows="50" cols="130"></textarea></br>
     </div>
   `;
- 	});
+
+  document.getElementById("submit").addEventListener("click", submit);
+
+  function submit() {
+    var controller = document.getElementById("controller").value;
+    var method = document.getElementById("method").value;
+    var postData = JSON.parse(document.getElementById("postData").value);
+
+    API.call(controller, method, postData, (result) => {
+      document.getElementById("result").value = JSON.stringify(result);
+    });
+  }
+});
