@@ -1,4 +1,4 @@
-function () {
+require(["DSx/Helpers/API"], function (API) {
 
   widget.body.innerHTML = `
     <div style="float: left;width: 30vw">
@@ -12,4 +12,15 @@ function () {
     </div>
   `;
 
+  document.getElementById("submit").addEventListener("click", submit);
+
+  function submit() {
+    var controller = document.getElementById("controller").value;
+    var method = document.getElementById("method").value;
+    var postData = JSON.parse(document.getElementById("postData").value);
+
+    API.call(controller, method, postData, (result) => {
+      document.getElementById("result").value = JSON.stringify(result);
+    });
+  }
 });
