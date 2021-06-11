@@ -1,4 +1,4 @@
-require(["DSx/Helpers/API"], function (API) {
+require(["DSx/Helpers/API"], function () {
    var i = 0;
  
             function addKid()
