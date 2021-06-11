@@ -1,26 +1,52 @@
 require(["DSx/Helpers/API"], function (API) {
-
+   var i = 0;
+ 
+            function addKid()
+            {
+                if (i < 5)
+                {
+                    var newRow = document.createElement('tr');
+ 
+                    newRow.innerHTML = '<td> <input type="text" name="Designation_'+i+'" ><td> <input type="text" name="Serie_'+i+'" ></td><td><input type="text" name="Quantite_'+i+'" ></td><td><input type="button" id="add_kid()" onClick="addKid()" value="+" /><input type="button" value="-" onclick="removeKid(this.parentNode)"></td>';
+ 
+                    document.getElementById('kids').appendChild(newRow);
+                    i++;
+                }
+            }
+ 
+            function removeKid(element)
+            {
+                document.getElementById('kids').removeChild(element.parentNode);
+                i--;
+            }
+ 
   widget.body.innerHTML = `
-    <div style="float: left;width: 30vw">
-      <h3>Controller :</h3><input id="controller" /></br>
-      <h3>Method :</h3><input id="method" /></br>
-      <h3>PostData :</h3><textarea id="postData" rows="4" cols="50"></textarea></br></br>
-      <input id="submit" type="button" value="Submit" />
-    </div>
-    <div style="float: left;width: 70vw">
-      <h3>Result : </h3><textarea id="result" rows="50" cols="130"></textarea></br>
-    </div>
+ <table border="1" id="kids">
+            <tr>
+                <th>Désignation</th>
+                <th>Série</th>
+                <th>Quantité</th>
+            </tr>
+            <tbody  >
+                <tr >
+                    <td  >
+                        <input type="text" name="Designation">
+                    </td>
+                    <td>
+                        <input type="text" name="Serie">
+                    </td>
+                    <td>
+                        <input type="text" name="Quantite">
+                    </td>
+                    <td>
+                        <input type="button" id="add_kid()" onClick="addKid()" value="+" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
   `;
 
-  document.getElementById("submit").addEventListener("click", submit);
 
-  function submit() {
-    var controller = document.getElementById("controller").value;
-    var method = document.getElementById("method").value;
-    var postData = JSON.parse(document.getElementById("postData").value);
-
-    API.call(controller, method, postData, (result) => {
-      document.getElementById("result").value = JSON.stringify(result);
     });
   }
 });
